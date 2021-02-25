@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>List of Subscribers</title>
+<link th:replace="subscriber/fragments/headLink">
+</head>
+<body>
+	<div class="container-fluid">
+		<h1>Name of all Subscribers:</h1>
+		<div class="list-group col-10 offset-1">
+			<div th:each="subscriber:${mysubscribers}">
+				<div class="row">
+					<div class="col-md-6 offset-3">
+						<div class="card">
+							<div class="card-body text-center">
+								<p>
+									<span th:text="${subscriber.firstName}"></span> <span
+										th:text="${subscriber.lastName}"></span>
+								</p>
+								<a href="#"><button class="btn btn-warning">User
+										Details</button></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href="/" class="btn btn-primary">Home page</a>
+	</div>
+	<script th:replace="subscriber/fragments/scripts"></script>
+  </body>
+</html>

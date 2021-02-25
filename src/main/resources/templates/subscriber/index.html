@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Subscriber List</title>
+<link th:replace="subscriber/fragments/headLink">
+</head>
+<body>
+	<div class="container-fluid">
+		<h1>Welcome to Our Awesome Site</h1>
+		<h3>Subscribe to our list sign-up below!</h3>
+		<p>Please use the form below to sign up as subscriber:</p>
+		<form action="#" th:action="@{/}" th:object="${subscriber}"
+			method="post">
+			<table>
+				<tr>
+					<td>First Name:</td>
+					<td><input type="text" th:field="*{firstName}" /></td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><input type="text" th:field="*{lastName}" /></td>
+				</tr>
+				<tr>
+					<td>Username:</td>
+					<td><input type="text" th:field="*{userName}" /></td>
+				</tr>
+				<tr>
+					<td><button type="submit">Submit Your Name</button></td>
+				</tr>
+			</table>
+		</form>
+		The form will bring in the first name, last name, and user name of the
+		subscriber. The form is set up like an HTML form. In addition to the
+		HTML tags, we have included the "th:" attribute in the tags to make
+		the connection between our database tables and the form.
+	</div>
+	<script th:replace="subscriber/fragments/scripts"></script>
+
+</body>
+</html>

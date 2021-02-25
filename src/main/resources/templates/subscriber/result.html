@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Subscriber Sign-Up</title>
+<link th:replace="subscriber/fragments/headLink">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="card">
+    <div class="card-header text-white bg-primary">
+      <h3>Thank you for signing up!</h3>
+      </div>
+      <div class="card-body">
+      <h5 class="card-title">Subscriber:</h5>
+      <p class="card-text" th:text="${firstName}"></p>
+      <p class="card-text" th:text="${lastName}" />
+      <p class="card-text" th:text="${username}" />
+      </div>
+    </div>
+    <a href="/" class="btn btn-primary">Home page</a>
+  </div>
+  <script th:replace="subscriber/fragments/scripts"></script>
+</body>
+</html>
